@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('learners', function (Blueprint $table) {
             $table->increments('id');
             $table->tinyText('name');
+            // $table->foreignId('person_id');
+            $table->unsignedInteger('person_id');
             $table->timestamps();
         });
     }

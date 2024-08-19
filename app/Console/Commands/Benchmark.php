@@ -32,15 +32,15 @@ class Benchmark extends Command
         //
         info('Benchmarking...'); 
 
-        // BM::dd([
-        //     'Person Seeder' => fn () => Artisan::call('db:seed --class=PersonSeeder'),
-        //     'Learner Seeder' => fn () => Artisan::call('db:seed --class=LearnerSeeder'),
-        // ], 5);
-
         BM::dd([
-            'Person Scenario' => fn () => Person::count(),
-            'Learner Scenario' => fn () => Learner::count(),
-        ], 5);
+            'Person Seeder' => fn () => Artisan::call('db:seed --class=PersonSeeder'),
+            'Learner Seeder' => fn () => Artisan::call('db:seed --class=LearnerSeeder'),
+        ], 2);
+
+        // BM::dd([
+        //     'Person Scenario' => fn () => Person::count(),
+        //     'Learner Scenario' => fn () => Learner::count(),
+        // ], 5);
 
     }   
 }

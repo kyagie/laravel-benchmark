@@ -15,7 +15,7 @@ class PersonSeeder extends Seeder
     {
         
         $chunkSize = 1000;
-        $totalRecords = 1_000_000;
+        $totalRecords = 10_000_000;
         $chunks = intdiv($totalRecords, $chunkSize);
 
         for ($i = 0; $i < $chunks; $i++) {

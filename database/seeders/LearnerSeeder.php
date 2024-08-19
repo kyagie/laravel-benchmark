@@ -15,7 +15,7 @@ class LearnerSeeder extends Seeder
     {
         //
         $chunkSize = 1000;
-        $totalRecords = 1_000_000;
+        $totalRecords = 10_000_000;
         $chunks = intdiv($totalRecords, $chunkSize);
 
         for ($i = 0; $i < $chunks; $i++) {
@@ -23,6 +23,7 @@ class LearnerSeeder extends Seeder
             for ($j = 0; $j < $chunkSize; $j++) {
                 $data[] = [
                     'name' => 'Learner ' . ($i * $chunkSize + $j),
+                    'person_id' => $i * $chunkSize + $j,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ];
